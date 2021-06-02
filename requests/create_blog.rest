@@ -1,9 +1,18 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
+# {
+#     "title" : "First Blog",
+#     "auther" : "Late",
+#     "url" : "http://localhost:3003/api/blogs",
+#     "likes" : 12
+# }
 {
-    "title" : "First Blog",
-    "auther" : "Late",
-    "url" : "http://localhost:3003/api/blogs",
-    "likes" : 12
-}
+      "_id": "5a422b3a1b54a676234d12f9",
+      "title": "Canonical string reduction",
+      "author": "Edsger W. Dijkstra",
+      "url": "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+      "likes": 12,
+      "user" : "60b75d52978989972fe9e133",
+      "__v": 0
+    }
