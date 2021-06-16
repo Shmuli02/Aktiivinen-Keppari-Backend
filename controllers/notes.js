@@ -1,3 +1,4 @@
+const config = require('../utils/config')
 const noteRouter = require('express').Router()
 const Note = require('../models/note')
 const User = require('../models/user')
@@ -23,7 +24,7 @@ noteRouter.post('/', async (request, response) => {
   const body = request.body
 
   const token = getTokenFrom(request)
-  const decodedToken = jwt.verify(token, process.env.SECRET)
+  const decodedToken = jwt.verify(token, config.SECRET)
   if (!token || !decodedToken.id) {
     return response.status(401).json({ error: 'token missing or invalid' })
   }
