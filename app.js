@@ -9,6 +9,7 @@ const blogRouter = require('./controllers/blogs')
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
 const taskRouter = require('./controllers/tasks')
+const noteRouter = require('./controllers/notes')
 const middleware = require('./utils/middleware')
 
 
@@ -33,6 +34,7 @@ app.use('/api/blogs',blogRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login',loginRouter)
 app.use('/api/tasks', taskRouter)
+app.use('/api/notes', noteRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

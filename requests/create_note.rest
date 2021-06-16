@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/notes
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdHRpIiwiaWQiOiI2MGM5YTk0ZDQyYjY3NjY4OTE0NjAzOWMiLCJpYXQiOjE2MjM4Mjg4MjksImV4cCI6MTYyMzgzMjQyOX0.4cKwdJBxm-KdZ_11V53SslDGP31PpfxAdaFnBoME8tk
+
+{
+  "task": "60c75dfe54a3eb64bfbf55f0",
+  "url": "https://"
+}
+
