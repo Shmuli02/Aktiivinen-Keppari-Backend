@@ -45,5 +45,55 @@ noteRouter.post('/', async (request, response) => {
   response.json(savedNote.toJSON())
 })
 
+noteRouter.put('/:id', async (request, response) => {
+  const body = request.body
+
+  const token = getTokenFrom(request)
+  const decodedToken = jwt.verify(token, config.SECRET)
+  if (!token || !decodedToken.id) {
+    return response.status(401).json({ error: 'token missing or invalid' })
+  }
+
+  const user = await User.findById(decodedToken.id)
+  const note = await Note.findById(request.params.id)
+  if (note == null) {
+    return response.status(401).json({error: 'invalid task id'})
+  }
+
+  const newNote = {
+    task: note.task,
+    url: body.url,
+    user: user._id
+  }
+
+  const updatedNote = await Note.findByIdAndUpdate(request.params.id, newNote, {new: true})
+  response.json(updatedNote.toJSON())
+
+})
+
+noteRouter.delete('/:id', async (request, response) => {
+  const body = request.body
+
+  const token = getTokenFrom(request)
+  const decodedToken = jwt.verify(token, config.SECRET)
+  if (!token || !decodedToken.id) {
+    return response.status(401).json({ error: 'token missing or invalid' })
+  }
+
+  const user = await User.findById(decodedToken.id)
+
+  await Note.findByIdAndDelete(request.params.id)
+  response.status(204).end()
+})
+
+
+noteRouter.get('/:id', async (request,response) => {
+  const note = await Note.findById(request.params.id)
+  if (note) {
+    response.json(note.toJSON())
+  } else {
+    response.status(404).end()
+  }
+})
 
 module.exports = noteRouter

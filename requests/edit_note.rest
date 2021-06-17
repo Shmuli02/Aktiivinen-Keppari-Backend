@@ -1,0 +1,7 @@
+PUT http://localhost:3003/api/notes/60c9a9a442b676689146039d
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hdHRpIiwiaWQiOiI2MGM5YTk0ZDQyYjY3NjY4OTE0NjAzOWMiLCJpYXQiOjE2MjM5MTYyMDQsImV4cCI6MTYyMzkxOTgwNH0.ziRM59MLsn2HC1ueagXMOp1KNqasO6AsB6WHrcFStl4
+
+{
+  "url": "http"
+}
