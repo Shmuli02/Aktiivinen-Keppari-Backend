@@ -6,7 +6,9 @@ const userSchema = mongoose.Schema({
     type : String,
     unique : true
   },
-  name : String,
+  firstname : String,
+  lastname: String,
+  email: String,
   passwordHash : String,
   notes : [{
     type : mongoose.Schema.Types.ObjectId,
