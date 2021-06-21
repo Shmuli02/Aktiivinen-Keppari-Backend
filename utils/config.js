@@ -7,17 +7,17 @@ const MONGODB_URL = process.env.NODE_ENV === 'test'
   ? process.env.TEST_MONGODB_URL
   : process.env.MONGODB_URL
 const SECRET = process.env.SECRET
-const REACT_APP_ACCESS_ID = process.env.REACT_APP_ACCESS_ID
-const REACT_APP_ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY
-const REACT_APP_BUCKET_NAME = process.env.REACT_APP_BUCKET_NAME
-const REACT_APP_REGION = process.env.REACT_APP_REGION
+const AWS_ACCESS_ID = process.env.AWS_ACCESS_ID
+const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY
+const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME
+const AWS_REGION = process.env.AWS_REGION
 
 module.exports = {
   PORT,
   MONGODB_URL,
   SECRET,
-  REACT_APP_ACCESS_ID,
-  REACT_APP_ACCESS_KEY,
-  REACT_APP_BUCKET_NAME,
-  REACT_APP_REGION
+  AWS_ACCESS_ID,
+  AWS_ACCESS_KEY,
+  AWS_BUCKET_NAME,
+  AWS_REGION
 }
