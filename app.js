@@ -28,10 +28,13 @@ mongoose.connect(config.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology
   })
 
 app.use(cors())
-app.use(express.static('build'))
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json())
 app.use(middleware.requestLogger)
 
+app.get('/*', function(req,res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 app.use('/api/blogs',blogRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login',loginRouter)
