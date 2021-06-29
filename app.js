@@ -6,6 +6,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const logger = require('./utils/logger')
 const path = require('path');
+const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const blogRouter = require('./controllers/blogs')
 const usersRouter = require('./controllers/users')
@@ -14,7 +16,7 @@ const taskRouter = require('./controllers/tasks')
 const noteRouter = require('./controllers/notes')
 const middleware = require('./utils/middleware')
 const uploadRouter = require('./controllers/upload')
-
+const emailRouter = require('./controllers/emailer')
 
 
 
@@ -28,10 +30,14 @@ mongoose.connect(config.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology
     logger.error('error connecting to MongoDB', error.message)
   })
 
+
+
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json())
 app.use(middleware.requestLogger)
+
+
 
 app.use('/api/blogs',blogRouter)
 app.use('/api/users', usersRouter)
@@ -39,6 +45,7 @@ app.use('/api/login',loginRouter)
 app.use('/api/tasks', taskRouter)
 app.use('/api/notes', noteRouter)
 app.use('/api/upload', uploadRouter)
+app.use('/api/email', emailRouter)
 
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/build/index.html'));
