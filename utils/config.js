@@ -12,6 +12,14 @@ const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY
 const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME
 const AWS_REGION = process.env.AWS_REGION
 
+const EMAIL = process.env.EMAIL
+const WORD = process.env.WORD
+const OAUTH_CLIENTID = process.env.OAUTH_CLIENTID
+const OAUTH_CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET
+const OAUTH_REFRESH_TOKEN = process.env.OAUTH_REFRESH_TOKEN
+
+
+
 module.exports = {
   PORT,
   MONGODB_URL,

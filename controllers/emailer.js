@@ -1,15 +1,17 @@
 const nodemailer = require("nodemailer");
 const emailRouter = require('express').Router()
+const config = require('../utils/config')
+
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     type: "OAuth2",
-    user: process.env.EMAIL,
-    pass: process.env.WORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    user: config.EMAIL,
+    pass: config.WORD,
+    clientId: config.OAUTH_CLIENTID,
+    clientSecret: config.OAUTH_CLIENT_SECRET,
+    refreshToken: config.OAUTH_REFRESH_TOKEN,
   },
  });
  transporter.verify((err, success) => {
