@@ -24,11 +24,14 @@ const errorHandler = (error, request, response, next) => {
       error : 'invalid token'
     })
   } else if (error.name === 'TokenExpiredError') {
-    return resonse.status(401).json(
+    return response.status(401).json(
       {error : 'token expired'
     })
+  } else if (error.name === 'MongoError') {
+    return response.status(400).json(
+    {error: 'käyttäjä nimi varattu'
+    })
   }
-
   next(error)
 }
 
