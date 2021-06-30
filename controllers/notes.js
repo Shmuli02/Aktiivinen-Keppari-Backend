@@ -34,7 +34,7 @@ noteRouter.post('/', async (request, response) => {
   const note = new Note({
     task : body.task,
     url : body.url,
-    user : user._id
+    user : user.id
   })
 
 
@@ -63,7 +63,7 @@ noteRouter.put('/:id', async (request, response) => {
   const newNote = {
     task: note.task,
     url: body.url,
-    user: user._id
+    user: user.id
   }
 
   const updatedNote = await Note.findByIdAndUpdate(request.params.id, newNote, {new: true})
