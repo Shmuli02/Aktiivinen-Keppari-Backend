@@ -34,7 +34,7 @@ uploadRouter.post('/',upload,(req, res) => {
 
     const params = {
         Bucket: config.AWS_BUCKET_NAME,
-        Key: `${uuid()}.${fileType}`,
+        Key: `${uuid()}--${req.body.user}.${fileType}`,
         Body: req.file.buffer
     }
 
