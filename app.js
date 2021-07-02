@@ -17,6 +17,7 @@ const noteRouter = require('./controllers/notes')
 const middleware = require('./utils/middleware')
 const uploadRouter = require('./controllers/upload')
 const emailRouter = require('./controllers/emailer')
+const imageRouter = require('./controllers/images')
 
 
 
@@ -46,6 +47,7 @@ app.use('/api/tasks', taskRouter)
 app.use('/api/notes', noteRouter)
 app.use('/api/upload', uploadRouter)
 app.use('/api/email', emailRouter)
+app.use('/api/images',imageRouter)
 
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/build/index.html'));
