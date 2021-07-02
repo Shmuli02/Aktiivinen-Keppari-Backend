@@ -34,7 +34,8 @@ noteRouter.post('/', async (request, response) => {
   const note = new Note({
     task : body.task,
     url : body.url,
-    user : user.id
+    user : user.id,
+    allowedToPublish: body.allowedToPublish
   })
 
 
