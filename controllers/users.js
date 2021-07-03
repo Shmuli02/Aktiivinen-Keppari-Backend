@@ -12,6 +12,7 @@ usersRouter.post('/', async (request,response) => {
     firstname : body.firstname,
     lastname: body.lastname,
     email: body.email,
+    diploma: '',
     passwordHash
   })
 
