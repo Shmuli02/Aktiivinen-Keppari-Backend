@@ -47,7 +47,7 @@ app.use('/api/tasks', taskRouter)
 app.use('/api/notes', noteRouter)
 app.use('/api/upload', uploadRouter)
 app.use('/api/email', emailRouter)
-app.use(`${config.SERVER_URI}/api/images`,imageRouter)
+app.use('/api/images',imageRouter)
 
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname+'/build/index.html'));
