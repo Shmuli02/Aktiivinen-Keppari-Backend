@@ -40,13 +40,13 @@ app.use(middleware.requestLogger)
 
 
 
-app.use(`${config.SERVER_URI}/api/blogs`,blogRouter)
-app.use(`${config.SERVER_URI}/api/users`, usersRouter)
-app.use(`${config.SERVER_URI}/api/login`,loginRouter)
-app.use(`${config.SERVER_URI}/api/tasks`, taskRouter)
-app.use(`${config.SERVER_URI}/api/notes`, noteRouter)
-app.use(`${config.SERVER_URI}/api/upload`, uploadRouter)
-app.use(`${config.SERVER_URI}/api/email`, emailRouter)
+app.use('/api/blogs',blogRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/login',loginRouter)
+app.use('/api/tasks', taskRouter)
+app.use('/api/notes', noteRouter)
+app.use('/api/upload', uploadRouter)
+app.use('/api/email', emailRouter)
 app.use(`${config.SERVER_URI}/api/images`,imageRouter)
 
 app.get('*', (req,res) =>{
