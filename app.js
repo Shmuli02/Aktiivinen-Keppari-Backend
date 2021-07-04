@@ -46,7 +46,7 @@ app.use('/api/login',loginRouter)
 app.use('/api/tasks', taskRouter)
 app.use('/api/notes', noteRouter)
 app.use('/api/upload', uploadRouter)
-app.use('/api/email', emailRouter)
+// app.use('/api/email', emailRouter)
 app.use('/api/images',imageRouter)
 
 app.get('*', (req,res) =>{
