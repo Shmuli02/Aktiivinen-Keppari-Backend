@@ -17,6 +17,7 @@ const WORD = process.env.WORD
 const OAUTH_CLIENTID = process.env.OAUTH_CLIENTID
 const OAUTH_CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET
 const OAUTH_REFRESH_TOKEN = process.env.OAUTH_REFRESH_TOKEN
+const SERVER_URI = 'https://aktiivinen-keppari.herokuapp.com/'
 
 
 
@@ -27,5 +28,6 @@ module.exports = {
   AWS_ACCESS_ID,
   AWS_ACCESS_KEY,
   AWS_BUCKET_NAME,
-  AWS_REGION
+  AWS_REGION,
+  SERVER_URI
 }
