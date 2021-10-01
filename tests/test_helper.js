@@ -21,10 +21,19 @@ const test_blogs = [
   }
 ]
 const test_user = [{
-  username: 'matti',
-  name: 'Matti Mallikas',
+  username: 'Late',
+  name: 'Late Lammas',
   password: 'salis',
 }]
+
+const test_tasks = [
+  {
+    _id:"60c75dfe54a3eb64bfbf55f0",
+    title:"Ota kuva kepparista",
+    difficulty:"helppo",
+    description:"Tehtävänä on ottaa kuva kepparista valitsemassasi ympäristössä."
+  }
+]
 
 const nonExistingId = async () => {
   const blog = new Blog({
@@ -52,5 +61,5 @@ const usersInDb = async () => {
 }
 
 module.exports = {
-  test_blogs, test_user, nonExistingId, blogsInDb,usersInDb
+  test_blogs, test_user, test_tasks, nonExistingId, blogsInDb,usersInDb
 }
