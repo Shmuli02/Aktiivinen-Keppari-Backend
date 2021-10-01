@@ -4,4 +4,4 @@ Aktiivinen keppari kilpailu on tarkoitettu kaikille keppihevosista kiinnostuneil
 
 Linkki sivustolla löytyy [tästä](https://aktiivinen-keppari.herokuapp.com)
 
-Koodin fronend ja dokumentaatiot löytyy [täältä](https://github.com/Shmuli02/Aktiivinen-Keppari-Frontend)
+Koodin frontend ja dokumentaatiot löytyy [täältä](https://github.com/Shmuli02/Aktiivinen-Keppari-Frontend)
